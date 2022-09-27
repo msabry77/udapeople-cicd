@@ -11,6 +11,8 @@ commands:
           channel: circle-cicd
           template: basic_fail_1
 
+
+
   install_awscli:
     description: Install AWS CLI v2
     steps:
@@ -238,7 +240,6 @@ jobs:
     steps:
       - checkout
       - install_awscli
-      - install_nodejs
       - run:
           name: Run migrations
           command: |

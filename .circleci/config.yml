@@ -234,10 +234,11 @@ jobs:
       - destroy-environment
   run-migrations:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/python:3.10
     steps:
       - checkout
       - install_awscli
+      - install_nodejs
       - run:
           name: Run migrations
           command: |
@@ -246,6 +247,7 @@ jobs:
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
+            npm run build
             npm run migrations > migrations_dump.txt
             
       - run:

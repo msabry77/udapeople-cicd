@@ -260,11 +260,12 @@ jobs:
           command: |
             cd backend
             npm install
+            npm install @nestjs/common
+            npm install @nestjs/core
+            npm install webpack --save
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
-            npm install @nestjs/common
-            npm install @nestjs/core
             npm run migrations > migrations_dump.txt
             
       - run:

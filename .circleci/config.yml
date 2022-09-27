@@ -263,6 +263,7 @@ jobs:
             npm install @nestjs/common
             npm install @nestjs/core
             npm install webpack --save
+            npm install --save @nestjs/typeorm typeorm mysql2
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical

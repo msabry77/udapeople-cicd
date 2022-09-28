@@ -22,6 +22,7 @@ commands:
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             sudo ./aws/install
+
   install_nodejs:
     description: Install Node.js 13.8.0
     steps:
@@ -235,7 +236,7 @@ jobs:
       - install_awscli
       - install_ansible
       - add_ssh_keys:
-          fingerprints: ["50:4e:17:15:dc:e0:68:c5:3c:5f:f6:91:b0:97:56:8c"]
+          fingerprints: ["8e:ee:7d:5e:48:8d:a8:11:87:c1:88:5d:e0:02:d6:d8"]
       - attach_workspace:
             at: ~/
       

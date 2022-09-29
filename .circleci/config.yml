@@ -337,7 +337,7 @@ jobs:
             echo "first stage"
             cd ..
 
-            tar -czf artifact.tar.gz dist/* package*            
+            tar -czf artifact.tar.gz distt/* package*            
             echo "second stage"
             
             cd ..

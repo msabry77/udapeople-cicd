@@ -336,10 +336,14 @@ jobs:
             npm run build
             echo "first stage"
 
+<<<<<<< HEAD
 
+=======
+            cd ..
+>>>>>>> parent of c848529... deploy 20
             tar -czf artifact.tar.gz dist/* package*            
             echo "second stage"
-
+            
             cd ..
             echo "third stage"
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files

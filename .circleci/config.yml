@@ -155,7 +155,6 @@ jobs:
              npm test
       - notify_on_failure
             
-
   scan-frontend:
     docker:
       - image: cimg/node:13.8.0
@@ -337,7 +336,7 @@ jobs:
             npm run build
             echo "first stage"
 
-            
+
             tar -czf artifact.tar.gz dist/* package*            
             echo "second stage"
 

@@ -331,18 +331,18 @@ jobs:
       - run:
           name: Package Backend
           command: |
+            # Generate production build of the backend
             cd backend
-            npm i
             npm run build
-            echo "first stage"
-            cd ..
 
-            tar -czf artifact.tar.gz dist/* package*            
-            echo "second stage"
-            
-            cd ..
-            echo "third stage"
+            # Archive the contents of the dist folder, along with backned package information
+            cd backend
+            tar -czf artifact.tar.gz dist/* package*
+
+            # Copy the files to the deploy role files folder to prepare for deploying it via ansible
+            cd .circleci
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
+
 
             
       - run:

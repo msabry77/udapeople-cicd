@@ -335,9 +335,14 @@ jobs:
             cd backend
             npm i
             npm run build
+            echo "first stage"
+
             tar -czf artifact.tar.gz dist/* package*            
-            
+            echo "second stage"
+
+          
             cd ..
+            echo "third stage"
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
 
             

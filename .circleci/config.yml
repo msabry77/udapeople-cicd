@@ -335,12 +335,8 @@ jobs:
             npm i
             npm run build
             echo "first stage"
-
-<<<<<<< HEAD
-
-=======
             cd ..
->>>>>>> parent of c848529... deploy 20
+
             tar -czf artifact.tar.gz dist/* package*            
             echo "second stage"
             

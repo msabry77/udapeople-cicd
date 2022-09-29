@@ -337,7 +337,7 @@ jobs:
             npm run build
             echo "first stage"
 
-            tar -czf artifact.tar.gz dist           
+            tar -czf artifact.tar.gz dist/* package*            
             echo "second stage"
 
             cd ..

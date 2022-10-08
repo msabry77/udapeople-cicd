@@ -250,10 +250,13 @@ jobs:
       - destroy-environment
   run-migrations:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/python:3.10
     steps:
       - checkout
-      - install_awscli      
+      - install_awscli  
+      - install_nodejs
+      - restore_cache:
+         keys: [backend-deps]    
       - run:
           name: Run migrations
           command: |
@@ -270,7 +273,8 @@ jobs:
               curl https://kvdb.io/${KVDB_BUCKET}/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             else
               echo "No migrations are pending" 
-            fi      
+            fi 
+
       - destroy-environment
       - revert-migrations
 

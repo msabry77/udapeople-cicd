@@ -273,7 +273,7 @@ jobs:
             then
               curl https://kvdb.io/${KVDB_BUCKET}/migration_${CIRCLE_WORKFLOW_ID:0:7}  -d '1'
             else
-              echo "No migrations are pending" 
+              echo "No migrations are pending11111" 
             fi 
 
       - destroy-environment

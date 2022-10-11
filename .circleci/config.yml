@@ -338,9 +338,7 @@ jobs:
           command: |
             cd backend
             npm run build
-            cd dist
-            echo 'TYPEORM_ENTITIES=./modules/domain/**/*.entity{.ts,.js}' >> .env
-            cd ..
+          
             # tar -czf artifact.tar.gz dist/* package*
 
             

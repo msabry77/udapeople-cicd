@@ -256,7 +256,7 @@ jobs:
       - install_awscli  
       - install_nodejs
       - restore_cache:
-         keys: [backend-deps]    
+         keys: [backend-build]    
       - run:
           name: Run migrations
           command: |
@@ -323,7 +323,7 @@ jobs:
       - install_awscli
       - install_nodejs
       - restore_cache:
-         keys: [backend-deps]
+         keys: [backend-build]
       - add_ssh_keys:
           fingerprints: ["62:6b:8f:9f:32:6d:4d:0f:e6:cf:75:fc:17:1e:82:03"]
       - attach_workspace:

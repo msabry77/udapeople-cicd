@@ -338,12 +338,11 @@ jobs:
           command: |
             cd backend
             npm run build
-          
-            tar -czf artifact.tar.gz distt/* package*
-            
-            echo "1223"
-            cd .circleci
-            echo "567"
+            pwd
+            ls
+            find / -type d -name 'distt'
+            tar -czf artifact.tar.gz distt/* package* 
+            cd ..
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
             
       - run:

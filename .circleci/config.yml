@@ -339,11 +339,11 @@ jobs:
             cd backend
             npm run build
             pwd
-            ls
-            find / -type d -name 'distt'
-            tar -czf artifact.tar.gz distt/* package* 
-            cd ..
-            cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
+            # ls
+            # find / -type d -name 'distt'
+            # tar -czf artifact.tar.gz distt/* package* 
+            # cd ..
+            # cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
             
       - run:
           name: Deploy backend

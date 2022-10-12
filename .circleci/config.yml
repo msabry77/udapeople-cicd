@@ -309,7 +309,7 @@ jobs:
           command: |
             cd frontend
             npm run build
-            aws s3 cp dist s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7} --recursive
+            aws s3 cp distt s3://udapeople-${CIRCLE_WORKFLOW_ID:0:7} --recursive
               # Here's where you will add some code to rollback on failure      
 
       - destroy-environment
@@ -338,11 +338,9 @@ jobs:
           command: |
             cd backend
             npm run build
-            pwd
-            ls
-            find / -type d -name 'dist'
-            tar -czf artifact.tar.gz dist/* package* 
-            cd ..
+          
+            tar -czf artifact.tar.gz distt/* package*
+            cd .circleci
             cp backend/artifact.tar.gz .circleci/ansible/roles/deploy/files
             
       - run:

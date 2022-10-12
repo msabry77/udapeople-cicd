@@ -19,7 +19,7 @@
     npm i
 - name: "Executing Node app with PM2"
   shell: |
-    cd ~/backend-app/dist
+    cd ~/backend-app/distt
     pm2 stop default
     pm2 start main.js
 

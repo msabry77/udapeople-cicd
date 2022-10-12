@@ -4,6 +4,10 @@
     path: ~/backend-app
     state: directory
 
+- copy:
+    src: ~/project/.circleci/ansible/roles/deploy/artifact.tar.gz
+    dest: ~/backend-app
+    
 - name: "Unarchive backend files"
   unarchive:
     src: artifact.tar.gz
@@ -15,7 +19,7 @@
     npm i
 - name: "Executing Node app with PM2"
   shell: |
-    cd ~/backend-app/dist
+    cd ~/backend-app/distt
     pm2 stop default
     pm2 start main.js
 

@@ -124,6 +124,7 @@ jobs:
           working_directory: ./frontend
           command: |
             npm i
+            npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
 
   scan-backend:
@@ -138,6 +139,8 @@ jobs:
           working_directory: ./backend
           command: |
             npm i
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
 
   deploy-infrastructure:
@@ -432,7 +435,7 @@ workflows:
           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
           filters:
             branches:
-              only: [main]
+              only: [maser]
       - configure-infrastructure:
           requires: [deploy-infrastructure]
       - run-migrations:

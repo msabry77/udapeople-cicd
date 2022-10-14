@@ -8,6 +8,6 @@ export class CurrentUser {
   constructor(@Inject(REQUEST) private readonly request: Request) {}
 
   getUser(): User {
-    return this.request['user'];
+    return this.request.user;
   }
 }

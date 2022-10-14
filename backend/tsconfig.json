@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
-    "outDir": "distt",
+    "outDir": "./dist",
     "baseUrl": "./src"
   },
   "include": ["src/**/*"],

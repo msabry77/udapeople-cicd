@@ -274,7 +274,7 @@ jobs:
           command: |
             API_URL=$curl https://kvdb.io/${KVDB_BUCKET}/migration_${CIRCLE_WORKFLOW_ID:0:7} \
             --request GET \
-            https://api.memstash.io/values/backend_url)
+            https://kvdb.io/${KVDB_BUCKET}/migration_${CIRCLE_WORKFLOW_ID:0:7})
             echo $API_URL
             echo "${API_URL}"
             echo "NODE_ENV=production" >> frontend/.env

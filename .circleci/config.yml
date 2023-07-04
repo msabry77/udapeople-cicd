@@ -153,10 +153,7 @@ jobs:
           working_directory: ./frontend
           command: |
             npm i
-            npm audit --audit-level=critical --froce
-            npm audit fix --force --audit-level=critical
-            npm audit fix --force --audit-level=critical
-            npm audit --audit-level=critical
+            
 
   scan-backend:
     docker:

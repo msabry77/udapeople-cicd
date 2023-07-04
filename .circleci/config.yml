@@ -154,7 +154,7 @@ jobs:
           command: |
             npm i
             npm audit fix --force --audit-level=critical
-            npm audit --audit-level=critical
+            npm audit --audit-level=critical --froce
 
   scan-backend:
     docker:
